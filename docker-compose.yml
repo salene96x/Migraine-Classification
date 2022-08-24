@@ -1,9 +1,9 @@
 version: '3.9'
 services:
-  notebook: 
+  notebook:
     container_name: jupyterlab
     hostname: jupyter
-    build: 
+    build:
       context: ./dockers/jupyterlab
     ports:
       #Jupyter Lab
@@ -15,22 +15,22 @@ services:
     working_dir: /usr/src
     tty: true
 
-  fastapi:
-    container_name: fastapi
-    hostname: fastapi
-    build:
-      context: ./dockers/fastapi
-    ports:
-      - "8686:8686"
-    volumes:
-      - .:/usr/src
-    working_dir: /usr/src
-    tty: true
+  # fastapi:
+  #   container_name: fastapi
+  #   hostname: fastapi
+  #   build:
+  #     context: ./dockers/fastapi
+  #   ports:
+  #     - "8686:8686"
+  #   volumes:
+  #     - .:/usr/src
+  #   working_dir: /usr/src
+  #   tty: true
 
   feast:
     container_name: feast
     hostname: feast
-    build: 
+    build:
       context: ./dockers/feast
     ports:
       - "9696:9696"
@@ -50,7 +50,7 @@ services:
       - .:/usr/src
     working_dir: /usr/src
     tty: true
-  
+
   mongodb:
     container_name: mongodb
     hostname: mongodb
@@ -72,3 +72,15 @@ services:
       - .:/usr/src
     working_dir: /usr/src
     tty: true
+
+  # airflow:
+  #   container_name: airflow
+  #   hostname: airflow
+  #   build:
+  #     context: ./dockers/airflow
+  #   #ports:
+  #     #- '8609:8609'
+  #   volumes:
+  #     - .:/usr/src
+  #   working_dir: /usr/src
+  #   tty: true
