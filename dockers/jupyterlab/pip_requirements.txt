@@ -11,8 +11,8 @@ evidently
 
 # model tracking
 mlflow
-#mlflow[pipelines]
-#mlflow[extras]
+mlflow[pipelines]
+mlflow[extras]
 
 # modeling
 xgboost
@@ -39,3 +39,4 @@ opendatasets
 sweetviz
 #Autoviz
 #pandas-profiling
+opendatasets

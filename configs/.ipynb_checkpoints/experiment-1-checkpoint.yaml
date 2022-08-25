@@ -1,0 +1,64 @@
+experiment_name: 'migraine-classification'
+datasets:
+    path: 'migraine-classification/data.csv'
+    x: 
+        - 'age'
+        - 'duration'
+        - 'frequency'
+        - 'location'
+        - 'character'
+        - 'intensity'
+        - 'nausea'
+        - 'vomit'
+        - 'phonophobia'
+        - 'photophobia'
+        - 'visual'
+        - 'sensory'
+        - 'dysphasia'
+        - 'dysarthria'
+        - 'vertigo'
+        - 'tinnitus'
+        - 'hypoacusis'
+        - 'diplopia'
+        - 'defect'
+        - 'ataxia'
+        - 'conscience'
+        - 'paresthesia'
+        - 'dpf'
+    y:
+        - 'type'
+    train_test_split:
+        test_size: 0.3
+        random_state: 696
+    labels:
+        - 'Typical aura with migraine'
+        - 'Migraine without aura'
+        - 'Basilar-type aura'
+        - 'Sporadic hemiplegic migraine'
+        - 'Familial hemiplegic migraine'
+        - 'Other'
+        - 'Typical aura without migraine'
+models:
+    sklearn:
+        neural_network:
+            - 'MLPClassifier'
+        neighbors:
+            - 'KNeighborsClassifier'
+        svm:
+            - 'SVC'
+        gaussian_process:
+            - 'GaussianProcessClassifier'
+        gaussian_process_kernels:
+            - 'RBF'
+        tree:
+            - 'DecisionTreeClassifier'
+        ensemble:
+            - 'RandomForestClassifier'
+            - 'AdaBoostClassifier'
+        naive_bayes:
+            - 'GaussianNB'
+        discriminant_analysis:
+            - 'QuadraticDiscriminantAnalysis'
+        inspection:
+            - 'DecisionBoundaryDisplay'
+    epochs: 10
