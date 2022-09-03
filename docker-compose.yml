@@ -26,7 +26,9 @@ services:
       context: ./dockers/feast
     ports:
       - "9696:9696"
-    working_dir: /usr/src #
+    volumes:
+      - .:/usr/src/
+    working_dir: /usr/src/ #
     tty: true #
   mlflow:
     container_name: mlflow
@@ -44,9 +46,9 @@ services:
       context: ./dockers/dtale
     ports:
       - "8181:8181"
-    working_dir: /usr/src/
+    # working_dir: /usr/src/
     volumes:
-      - .:/usr/src/dtale
+      - .:/usr/src/
     tty: true #
   mysql:
     image: mysql:latest
